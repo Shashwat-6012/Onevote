@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myModal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0px;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 3px 15px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 60px auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        #form input {
+            outline: 0;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            padding: 15px 10px;
+            outline: 0;
+            border-radius: 5px;
+        }
+
+        .poll-form {
+            margin: 0px 270px;
+        }
+
+        #form p {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .poll-form button {
+            font-size: 18px;
+            font-weight: bold;
+            margin: auto;
+            padding: 10px 15px;
+            width: 50%;
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .poll-form button:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" id="mc">
+            <span class="close">&times;</span>
+            <div class="poll-form">
+                <form action="./_polls.php" method="post" id="form">
+                    <p> poll Query</p>
+                    <input type="Query" name="Query" placeholder="Enter poll Query">
+                    <p> Option 1 </p>
+                    <input type="Option1" name="Option1" placeholder="Option1">
+                    <p> Option 2 </p>
+                    <input type="Option2" name="Option2" placeholder="Option2">
+                    <br><br>
+                    <button type="submit"> post </a></button>
+                    <!-- <a href="./register.html" class="href"> Click here to Register </a> -->
+
+                </form>
+            </div>
+
+        </div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            var mc = document.getElementById("mc");
+            // When the user clicks on the button, open the modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+
+                }
+            }
+        </script>
+</body>
+
+</html>

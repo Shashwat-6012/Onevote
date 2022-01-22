@@ -1,0 +1,30 @@
+@media only screen and (max-width: 300px){
+    body {
+        background-color: aqua;
+        background-image: none;
+        display: grid;
+        grid-template-areas: 
+        'header header header header'
+        'header header header header'
+        'box1 box1 box1 box1'
+        'box2 box2 box2 box2'
+        'footer footer footer footer';
+    }
+    #head1{display:none;}
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 500px){
+  body {
+      background-color: aqua;
+      background-image: none;
+  }
+}
+@media  (min-width: 500px) and (max-width: 1256px){
+    body {
+        background-color: aqua;
+       background-image: none;
+    }
+}
+
+    

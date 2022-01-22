@@ -1,0 +1,388 @@
+body {
+    display: grid;
+    grid-template-areas: 
+    'header header header header'
+    'container1 container1 container1 container1'
+    'container3 container3 container2 container2'
+    'footer footer footer footer';
+}
+
+
+header {
+    height: 80px;
+    margin-left: -11px;
+    margin-right: -11px;
+    margin-top: 20px;
+    grid-area: header;
+    /* background-color: rgb(39, 36, 36); */
+    grid-area: header;
+}
+
+.bar {
+    display: inline-block;
+}
+
+#head1 {
+
+    margin: 4px 4px;
+    padding: 12px 4px;
+    width: 10%;
+    grid-area: head1;
+
+}
+
+#head2 {
+
+    margin: 4px 122px;
+    padding: 12px 4px;
+    width: 59%;
+    grid-area: head2;
+}
+
+nav li {
+    list-style-type: none;
+    display: inline;
+    padding: 15px 13px;
+    border-left: 1px solid white;
+    
+}
+nav li:last-child{
+    border-right: 1px solid white;
+}
+
+nav li a {
+    color: white;
+    padding: 4px 40px;
+    text-decoration: none;
+    
+}
+
+nav li a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+#head1 img {
+    margin: -20px 18px;
+    width: 93px;
+    height:61px;
+    filter: invert(1);
+    border-radius: 36px;
+    position:relative;
+}
+#head1:hover {
+    position:relative;
+    animation: logo 3s infinite;
+    
+}
+@keyframes logo {
+   0% { 
+top:0px; left:0px;}
+25% {
+       top: 0px; left: 20px;
+   }
+   50% {
+       top: 20px; left: 20px;
+   }
+   75% {
+       top:20px; left: 0px;
+   }
+   100%{ top:0px; left:0px;}
+}   
+
+/* .container {
+   border: 1px solid black;
+} */
+#container1{
+    grid-area: container1;
+    background-color: lightsalmon;
+    margin-left: -11px;
+    margin-right: -11px;
+    font-family: 'Architects Daughter', cursive;
+    height: 30vh;
+}
+#container1 h2{
+    display: inline-block;
+    font-size: 25px;
+}
+#container1 h3{
+    display:inline-block;
+    font-size: 50px;
+}
+#container1 h1{
+    font-size: 95px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#container1 h3{
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 75px;
+}
+#container2{
+    grid-area: container2;
+    background-color: lightslategray;
+    width: 30vw;
+    margin-right: 50px;
+    margin-top: -95px;
+    height: 75vh;
+    font-family: 'Anton', sans-serif;
+    /* box-shadow: -10px -10px green; */
+}
+#container2 p{ 
+    margin: 25px 25px;
+    font-size: 20px;
+}
+#container3{
+    width: 65vw;
+    grid-area: container3;
+    /* background-color: red; */
+}
+#container3 h{
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Architects Daughter', cursive;
+    margin-left: 100px;
+    color: white;
+}
+.Events {
+    display: block;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 16px 30vw;
+    margin: 2px 2px;
+    font-size: 20px;
+}
+    
+.Events:hover{
+    Color: rgb(132, 133, 76);
+    background-color: aqua;
+}
+#myBtn {
+    display: inline-block;
+    margin-left: 30vw;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: aqua;
+}
+#myBtn:hover {
+    background-color: aliceblue;
+    border-radius: 30px;
+}
+
+footer {
+    position: sticky;
+    bottom: 0%;
+    margin: 4px 4px;
+    padding: 21px 189px;
+    background-color: aliceblue;
+    text-align: center;
+    box-shadow: inset;
+    grid-area: footer;
+    margin-left: -11px;
+    margin-right: -11px;
+   
+    
+}
+/* modal style  */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0px;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 3px 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2px 16px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+#form input {
+    outline: 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.poll-form {
+    margin: 0px 270px;
+}
+
+#form p {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.poll-form button {
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px 15px;
+    width: 50%;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.poll-form button:hover{
+    background-color: aqua;
+}.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0px;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 3px 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2px 16px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+#form input {
+    outline: 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.poll-form {
+    margin: 0px 270px;
+}
+
+#form p {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.poll-form button {
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px 15px;
+    width: 50%;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.poll-form button:hover{
+    background-color: aqua;
+}

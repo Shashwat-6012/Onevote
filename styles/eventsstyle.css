@@ -1,0 +1,108 @@
+header {
+    height: 70px;
+    margin: 0px;
+    grid-area: header;
+    background-color: rgb(39, 36, 36);
+}
+
+.bar {
+    display: inline-block;
+}
+
+#head1 {
+
+    margin: 4px 4px;
+    padding: 12px 4px;
+    width: 10%;
+    grid-area: head1;
+
+}
+
+#head2 {
+
+    margin: 4px 122px;
+    padding: 12px 4px;
+    width: 59%;
+    grid-area: head2;
+}
+
+nav li {
+    list-style-type: none;
+    display: inline;
+
+}
+
+nav li a {
+    color: white;
+    padding: 4px 40px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+#head1 img {
+    margin: -20px 18px;
+    width: 93px;
+    height:61px;
+    filter: invert(1);
+    border-radius: 36px;
+    position:relative;
+}
+#head1:hover {
+    position:relative;
+    animation: logo 3s infinite;
+    
+}
+@keyframes logo {
+   0% { 
+top:0px; left:0px;}
+25% {
+       top: 0px; left: 20px;
+   }
+   50% {
+       top: 20px; left: 20px;
+   }
+   75% {
+       top:20px; left: 0px;
+   }
+   100%{ top:0px; left:0px;}
+}   
+.container {
+    display: grid;
+    grid-template-areas: 
+    'leftbox leftbox rightbox rightbox'
+    'leftbox leftbox rightbox rightbox'
+    'footer footer footer footer '
+    ;
+    grid-gap: 2rem;
+    margin: 21px 4px;
+    height: 90vh;
+}
+.box {
+    position: relative;
+   animation: box 3s 1;
+}
+@keyframes box {
+    0% {
+        top: 30vh;
+    }
+    100%{
+        top: 0vh;
+    }
+    
+}
+
+#leftbox{
+    grid-area: leftbox;
+    background-color: aqua;
+}
+#rightbox {
+    grid-area: rightbox;
+    background-color: brown;
+}
+footer {
+    grid-area: footer;
+}
