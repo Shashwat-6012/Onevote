@@ -9,11 +9,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 $sql = "INSERT INTO `polls` (`user_name`, `poll_question`, `poll_ans_1`, `poll_ans_2`,`time`) VALUES ('$name', '$PQuestion', '$OPT1 ', '$OPT2', CURRENT_TIMESTAMP)";
 $result = mysqli_query($conn, $sql);
+// if($result){
+//     $_SESSION['pq'] = $PQuestion;
+//     header("location: mail.php");
+// }
+// else{
+//     echo "Query was not succefully inserted";
+// }
+$sql1 = "SELECT * FROM `polls` WHERE poll_question = '$PQuestion'";
+$result = mysqli_query($conn, $sql1);
+$row = mysqli_fetch_assoc($result);
+$p_id = $row['poll id']; 
 if($result){
-    $_SESSOIN['pq'] = $PQuestion;
-    header("location: mail.php");
+    header("location: mail.php?pid=".$p_id." ");
 }
 else{
-    echo "Query was not succefully inserted";
+    echo 'Query not succesfull';
 }
 ?>

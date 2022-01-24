@@ -139,26 +139,48 @@ session_start();
                 <?php
                     include '.\dbconnect.php';
                     $name = $_SESSION['username'];
-                    // $_pid = $_GET['pollid'];
-                    $PQ = $_SESSION['pq'];
-                    $sql = "SELECT * FROM `polls` WHERE poll_question = '$PQ'";
-                    $result = mysqli_query($conn , $sql);
-                    $i = 1;
-                    $row = mysqli_fetch_assoc($result)
-                    $_id = $row['poll id'];
-                    echo '  
-                            <div class ="question">
-                                <div class="Q">
-                                    <h2> '.$i ." ) ". $row['poll_question'].'</h2>
-                                </div>
-                                <div class="A1">
-                                    <button id = "btn" class = "btn"> <a href= "count1.php?pollid='. $_id .'">'. $row['poll_ans_1'] .'</a> </button>
-                                </div>
-                                <div class="A2">
-                                    <button class = "btn"> <a href= "count2.php?pollid='. $_id .'">'. $row['poll_ans_2']. '</a> </button>
-                                </div>
-                            </div>';
-                    $i = $i + 1; 
+                    $pid = $_GET['pid'];
+                    // $PQ = $_SESSION['pq'];
+                    // echo gettype($pid);
+                    $sql = "SELECT * FROM `polls` WHERE `polls`.`poll id` = '$pid'"; 
+                    $result = mysqli_query($conn, $sql); 
+                    $row = mysqli_fetch_assoc($result);
+                    if($result){
+                        $i = 1;
+                        $_id = $row['poll id'];
+                        echo '  
+                                <div class ="question">
+                                    <div class="Q">
+                                        <h2> '.$i ." ) ". $row['poll_question'].'</h2>
+                                    </div>
+                                    <div class="A1">
+                                        <button id = "btn" class = "btn"> <a href= "count1.php?pollid='. $_id .'">'. $row['poll_ans_1'] .'</a> </button>
+                                    </div>
+                                    <div class="A2">
+                                        <button class = "btn"> <a href= "count2.php?pollid='. $_id .'">'. $row['poll_ans_2']. '</a> </button>
+                                    </div>
+                                </div>';
+                        $i = $i + 1; 
+                    }
+                    else{
+                        echo 'fail';
+                    }
+                    // $i = 1;
+                    // $row = mysqli_fetch_assoc($result)
+                    // $_id = $row['poll id'];
+                    // echo '  
+                    //         <div class ="question">
+                    //             <div class="Q">
+                    //                 <h2> '.$i ." ) ". $row['poll_question'].'</h2>
+                    //             </div>
+                    //             <div class="A1">
+                    //                 <button id = "btn" class = "btn"> <a href= "count1.php?pollid='. $_id .'">'. $row['poll_ans_1'] .'</a> </button>
+                    //             </div>
+                    //             <div class="A2">
+                    //                 <button class = "btn"> <a href= "count2.php?pollid='. $_id .'">'. $row['poll_ans_2']. '</a> </button>
+                    //             </div>
+                    //         </div>';
+                    // $i = $i + 1; 
                     
                 ?>
         </div>
