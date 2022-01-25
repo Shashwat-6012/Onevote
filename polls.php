@@ -217,7 +217,7 @@ session_start();
                     <div class="dropdown">
                         <a class="dropbtn">'. $row['user_name'].'</a>
                         <div class="dropdown-content">
-                            <a href="#"> Results are declared, click here to view them. </a>
+                            <a href="./presult.php?p_id='.$row['poll id'].'"> Results are declared, click here to view them. </a>
                         </div>
                     </div>';
                 }
