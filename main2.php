@@ -75,7 +75,16 @@ session_start();
             <nav>
                 <ul>
                     <li><a href="main2.php"> HOME </a></li>
-                    <li><a href="events.html"> EVENTS </a></li>
+                    <?php
+                    
+                    if($_SESSION['email'] == "cm.b.51shashwat.suthar@gmail.com"){
+                    echo '
+                    <li><a  href="./Org_form.php"> Admin edit </a></li>';
+                    }
+                    else{
+                        echo '<li><a href="events.html"> Events </a></li>';
+                    }
+                    ?>
                     <li><a href="aboutus.html"> ABOUT US </a></li>
                     <li><a href="#"> CONTACT US </a></li>
 

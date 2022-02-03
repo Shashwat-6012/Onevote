@@ -10,6 +10,8 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elections.</title>
   <link rel="stylesheet" href="sidebar.css" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
   body {
@@ -22,7 +24,7 @@ session_start();
       'header header header header'
       'ssc ssc ssc ssc'
       'head head head head'
-      'container1 container2 container2 container2'
+      'container1 container1 container2 container2'
       'footer footer footer footer';
 
   }
@@ -228,7 +230,7 @@ session_start();
 
   .container1 {
     grid-area: container1;
-    height: 40vh;
+    /* height: 40vh; */
     margin: 2px;
     color: white;
     width: 0vw;
@@ -236,7 +238,7 @@ session_start();
 
   .container2 {
     grid-area: container2;
-    height: 60vh;
+    /* height: 60vh; */
     margin: 2px;
     display: grid;
     grid-template-areas: 'card1 card1 card2 card2';
@@ -320,13 +322,6 @@ session_start();
     margin: auto;
   }
 
-  .cards {
-    margin: 20px;
-    color: white;
-    width: 200px;
-    height: 200px;
-  }
-
   #card1 {
     /* background-color: red; */
     grid-area: card1;
@@ -358,91 +353,6 @@ session_start();
     height: 160px;
     width: 210px;
   }
-  .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-}
-
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {
-    padding: 2px 16px;
-    display: grid;
-    grid-template-areas: 
-    'top top top top'
-    'left left right right'
-    ;
-}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0} 
-  to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
 .container{
     margin: 4px;
     height: 25vh;
@@ -552,58 +462,46 @@ session_start();
     </div>
   </div>
   <div class="container2">
-    <div class="cards" id="card1">
-      <h1> Rotract club's Presidential election 2020.</h1>
-      <button id="Btn"> <img src="img/rotract.jpg" class="electclub" alt=""></button>
-    </div>
-    <div class="cards" id="card2">
-      <h1> RCVJ club's chairman's election 2020.</h1>
-      <!-- <a href="#" id="myBtn"> <img src="img/rcvj.jpg" class="electclub" alt=""></a> -->
-       <?php
-                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                        
-                        echo '<button id="myBtn"> <img src="img/rcvj.jpg" class="electclub" alt=""></button>';
-                        }
-                        else{
-                            echo '<a href="login.html" id="myBtn"> <img src="img/rcvj.jpg" class="electclub" alt=""></a>';
-                        }
-                    
-                    ?> 
-    </div>
+        <div class="card" style="width: 15rem; margin-top: 50px;">
+            <img src="./img/rotract.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type = "button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Go somewhere</button>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem; margin-top: 50px;">
+            <img src="./img/rotract.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type = "button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Go somewhere</button>
+            </div>
+        </div>
   </div>
 
   <footer>
     <h> Copyrights@shashwat suthar </h>
   </footer>
-  <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2> Voting portal </h2>
+        <h5 class="modal-title" id="exampleModalLabel">RCVJ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <div class="container" id="top"> 
-              <img src="img/rcvj.jpg" alt="" style="height: 25vh; grid-area: img; margin-left: 2vw;">
-              <div class="info" style="grid-area: info; ">
-                  About the club. 
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, omnis.
-              </div>
-           </div>
-          <div class="container" id="left"> 
-              <a id = "link" href="javascript:void(0)" onclick="openNav()"> vote </a>
-          </div>
-          <div class="container" id="right"> 
-              <a href="#" class="href"> participate </a>
-          </div>
+        ...
       </div>
       <div class="modal-footer">
-         <h3> <?php echo "Welcome  ". $_SESSION['username'];?>  </h3> 
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  <!-- Modal end  -->
   </div>
+</div>
 
 
   <!-- Sidebar start -->
@@ -689,7 +587,7 @@ session_start();
         rightnav.style.display = 'block';
       }
     }</script>
-    <script>
+    <!-- <script>
       // Get the modal
       var modal = document.getElementById("myModal");
       
@@ -724,7 +622,7 @@ session_start();
           modal.style.display = "none";
         }
       }
-      </script>
+      </script> -->
        
       <!-- Script for sidebar -->
       <script>
